@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Software Engineering at Google Notes Executive SaaS Leadership DevOps Cloud Cybersecurity Software Development DevSecOps SRE IaC Python Kubernetes SEAG Notes" />
+        <meta name="author" content="Josh Turgasen" />
+        <h1><title>Software Engineering at Google Notes | Chapter #14 - Larger Testing (1 of 3)</title></h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <!-- CSS (includes Bootstrap)-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- ******************** -->
+
+
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-55182074-2');
+        </script>
+        <!-- ************ -->
+
+
+    </head>
+    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="">SEAG Notes</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+        <!-- HEADER-->
+        <header class="header_chapters">
+            <div class="container banner_title_heading">
+                <div class="chapters_page_header">Software Engineering At Google</div>
+                <div class="chapters_number">Chapter #14 - Larger Testing (1 of 3)</div>
+                <div class="col-md-12 line">
+                <span class="linee"></span>
+                </div>
+
+
+            </div>
+        </header>
+        <!-- ****************** -->
+
+
+
+
+
+
+
+
+<div class="container list_chapter_pages">
+<div class="row">
+<div class="col-md-12">
+
+<h2>Larger Testing (1 of 3)</h2>
+
+<ul class="bullets_list">
+
+  <li>Large tests make up a significant part of Google's risk mitigation strategy</li>
+  <li>One must ensure large tests provide value and are not resource sinks</li>
+  <li>Large tests may be slow, non-hermetic (it shares resources), and non-deterministic (may go on forever)</li>
+  <li>Unit tests create confidence for objects, modules, and functions while large tests create confidence in the overall system</li>
+  <li>Environment fidelity refers to how like production the testing environment is. It may be exactly like prod or it may be simple test VMs</li>
+  <li>One must balance the fidelity of the test environment as the closer it gets to looking like prod the more expensive it is</li>
+  <li>Creating test data for a new service with no existing real or test data is hard</li>
+  <li>There's no good way to solve that problem because biases will be inherent when a human creates test data</li>
+  <li>Ensure that test doubles stay up to date. The person who writes an API should also write and maintain the test double</li>
+  <li>Ensure your binary's config files are in version control so you know when changes (and breaking changes) happen</li>
+  <li>At Google, configuration changes are the number one cause of major outages</li>
+  <li>Large testing helps find problems that arise under load whereas unit testing cannot find these issues</li>
+  <li>Large tests also help find unanticipated behaviors as unit tests are written by (and limited to) the engineers themselves</li>
+  <li>Unit tests are like theoretical physics, in a vaccum, hidden from the mess of the real world</li>
+  <li>Large tests touch the parts that unit tests deliberately seek to avoid</li>
+  <li>Tests must be reliable (not flakey, with a reliable fail/pass signal), fast (as to not interrupt workflow), and scalable</li>
+  <li>Good unit tests follow the above, good large tests mostly ignore the above</li>
+  <li>Without clear ownership a test rots (think of all the components a large test interacts with)</li>
+  <li>Large tests, unlike unit tests, suffer from a lack of standardization (can't just use a couple language libraries)</li>
+  <li>Large tests can vary from team to team and the engineer who wrote the code doesn't know all of the infrastructure too</li>
+  <li>Consider putting timeouts on your tests to force efficent, small tests</li>
+  <li>If you don't design your code with tests in mind you're instantly creating "legacy code"</li>
+  <li>Manual or no tests for short lived scripts, some unit tests for code that lives for days, large tests for code that lives for years</li>
+  <li>The smallest possible test: Smaller is better</li>
+  <li>Break things down eg: multiple integration tests instead of one large one</li>
+  <li>Break down "chained" tests (web -> app -> data source -> app -> data source) into discreet steps where output from one step is input for the next step</li>
+  <li>Larger tests usually follow the same flow:
+    <ul>
+      <li>Obtain system under test (aka the infrastructure to run the tests)</li>
+      <li>Seed necessary test data (load data sources and caches)</li>
+      <li>Perform actions using the system under test (run the tests)</li>
+      <li>Verify behaviors (examine test results)</li>
+    </ul>
+  </li>
+  <li>SUT (System Under Test) is the underlying infrastructure used to perform the tests</li>
+  <li>The scope of the SUT can vary based on the test. Unit tests only need libaries where large tests may talk to multiple 3rd party systems</li>
+  <li>A SUT with high hermacity (sealed, isolated, known environment) will have the least issue due to infrastructure flakeyness and concurrency / load</li>
+  <li>A SUT can have variying levels of fiedlity (closeness to production)</li>
+  <li>Some types of SUTs:
+    <ul>
+      <li>Single-process (single thread, everything in a single package)</li>
+      <li>Single-machine (multiple processes on the same machine)</li>
+      <li>Multimachine (multiple processes on separate machines)</li>
+      <li>Hybrids (a mix of many)</li>
+      <li>Shared Environment (shared environment for all tests, costs less)</li>
+    </ul>
+  </li>
+
+</ul>
+
+
+
+<!-- NEXT PREVIOUS -->
+<a href="chap_thirteen_page_three.html" class="next_page_link">
+< BACK
+</a>
+<a href="chap_fourteen_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
+NEXT >
+</a>
+<!-- ******* -->
+
+
+</div>
+</div>
+</div>
+
+
+<!--  -->
+<!-- BUTTONS  and ADSENSE START -->
+<div class="container about_us_section" id="blog">
+
+<div class="container about_us_section" style="margin-top: 140px;">
+
+          <!-- BUTTONS ROW -->
+
+          <div class="row titles_row">
+          <div class="col-md-12">
+          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+          </div>
+          </div>
+          <!-- BUTTONS ROW COMPLETED -->
+
+  </div>
+  <!-- ************* -->
+  <!-- ************* -->
+
+<!-- GOOGLE ADSENSE -->
+<div class="row" style="text-align:center;">
+<div class="col-md-12">
+    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</div>
+</div>
+<!-- ********* -->
+
+</div>
+<!-- ************ -->
+<!-- ************ -->
+
+<!-- FOOTER SECTION START -->
+<div class="container-fluid footer_bg">
+<div class="container">
+
+
+
+
+<!-- COPYRIGHT ROW -->
+<div class="row copyright_row">
+<div class="col-md-12">
+  <span class="copyright_title">© 2020 Josh Turgasen</span><br>
+  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
+</div>
+</div>
+<!--  -->
+<!--  -->
+
+
+</div>
+</div>
+<!-- FOOTER SECTION COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JS-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Required JS-->
+        <script src="js/scripts.js"></script>
+
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Software Engineering at Google Notes Executive SaaS Leadership DevOps Cloud Cybersecurity Software Development DevSecOps SRE IaC Python Kubernetes SEAG Notes" />
+        <meta name="author" content="Josh Turgasen" />
+        <h1><title>Software Engineering at Google Notes | Chapter #11 - Testing Overview (3 of 3)</title></h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <!-- CSS (includes Bootstrap)-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- ******************** -->
+
+
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-55182074-2');
+        </script>
+        <!-- ************ -->
+
+
+    </head>
+    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="">SEAG Notes</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+        <!-- HEADER-->
+        <header class="header_chapters">
+            <div class="container banner_title_heading">
+                <div class="chapters_page_header">Software Engineering At Google</div>
+                <div class="chapters_number">Chapter #11 - Testing Overview (3 of 3)</div>
+                <div class="col-md-12 line">
+                <span class="linee"></span>
+                </div>
+
+
+            </div>
+        </header>
+        <!-- ****************** -->
+
+
+
+
+
+
+
+
+<div class="container list_chapter_pages">
+<div class="row">
+<div class="col-md-12">
+
+<h2>Testing Overview (3 of 3)</h2>
+
+<ul class="bullets_list">
+
+  <li>Large tests are more about validating configurations and not pieces of code as well as legacy systems that can't be doubled/mocked</li>
+  <li>Consider only running the "large tests" suite at the end before you release, not each time you test</li>
+  <li>Google says once your tests get 1% flakey, people start to lose confidence</li>
+  <li>Tests should assume as little as possible about the outside environment, including the order that the tests themselves are run</li>
+  <li>Tests should ONLY contain the info needed for the test and nothing more (clean code, clean tests)</li>
+  <li>A test should also be "obvious upon examination"</li>
+  <li>Google discourages the use of control flow statments such as loops and conditionals</li>
+  <li>Unit tests are small scoped tests</li>
+  <li>Integration tests are medium scoped tests</li>
+  <li>End-to-end or functional tests are large scoped tests</li>
+  <li>"Test doubles" is the collective term for fakes, mocks, and similar</li>
+  <li>About 80% of tests should be narrow scoped, 15% medium, 5% large</li>
+  <li>Smaller tests = less cognative load</li>
+  <li>Favor unit tests early to build developer confidence and add end-to-end tests to build product confidence later</li>
+  <li>What should you test? Test everything that you don't want to break.</li>
+  <li>Do your tests address how your system handles failure(s)?</li>
+  <li>"A predictable and controlled response to adverse conditions is a hallmark of a reliable system"</li>
+  <li>Code coverage is the percentage of the code that is covered by tests (if 80 out of 100 lines are tested then it is 80% covered)</li>
+  <li>Only count coverage from small tests as large tests tend to inflate coverage metrics</li>
+  <li>Think about the behaviors that you test for. What other things will your customers do? Write tests for that</li>
+  <li>Google uses a monorepo (single repo for all code) and no branching. It works for them.</li>
+  <li>"Brittle tests" is when small code changes result in many new test failures</li>
+  <li>The number one cause of brittle tests at Google is misuse of mock objects</li>
+  <li>The larger a test suite, the slower it runs, the less value it provides</li>
+  <li>Actively poll for state transition instead of using sleeps</li>
+  <li>Treat tests like production code (create incentives to write and maintain good tests)</li>
+  <li>Reasons tests become slow: Waiting for systems to sync, processing large data sets, or starting the environment (starting the VM or emulator, etc)</li>
+  <li>Google pushed testing culture with new hires via orientation, thus building the culture over time</li>
+  <li>Google also created 5 categories of testing maturity, applied them to each team, and worked to improve them</li>
+  <li>Put posters in toilets to make sure people see it daily (Testing on the Toilet)</li>
+  <li>Finding security issues via testing is best done by humans, not automation</li>
+</ul>
+
+
+
+
+<!-- NEXT PREVIOUS -->
+<a href="chap_eleven_page_two.html" class="next_page_link">
+< BACK
+</a>
+<a href="chapter_twelve.html" class="next_page_link" style="position: relative;left: 10px;">
+NEXT >
+</a>
+
+<!-- ******* -->
+
+
+</div>
+</div>
+</div>
+
+
+<!--  -->
+<!-- BUTTONS  and ADSENSE START -->
+<div class="container about_us_section" id="blog">
+
+<div class="container about_us_section" style="margin-top: 140px;">
+
+          <!-- BUTTONS ROW -->
+
+          <div class="row titles_row">
+          <div class="col-md-12">
+          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+          </div>
+          </div>
+          <!-- BUTTONS ROW COMPLETED -->
+
+  </div>
+  <!-- ************* -->
+  <!-- ************* -->
+
+<!-- GOOGLE ADSENSE -->
+<div class="row" style="text-align:center;">
+<div class="col-md-12">
+    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</div>
+</div>
+<!-- ********* -->
+
+</div>
+<!-- ************ -->
+<!-- ************ -->
+
+<!-- FOOTER SECTION START -->
+<div class="container-fluid footer_bg">
+<div class="container">
+
+
+
+<!-- COPYRIGHT ROW -->
+<div class="row copyright_row">
+<div class="col-md-12">
+  <span class="copyright_title">© 2020 Josh Turgasen</span><br>
+  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
+</div>
+</div>
+<!--  -->
+<!--  -->
+
+
+</div>
+</div>
+<!-- FOOTER SECTION COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JS-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Required JS-->
+        <script src="js/scripts.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
