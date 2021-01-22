@@ -9,242 +9,392 @@
 
 <url>
   <loc>https://www.seagnotes.com/</loc>
-  <lastmod>2020-07-12T22:59:04+00:00</lastmod>
+  <lastmod>2021-01-22T22:03:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.seagnotes.com/index.html</loc>
-  <lastmod>2020-07-12T22:59:04+00:00</lastmod>
+  <lastmod>2021-01-22T22:03:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.seagnotes.com/about.html</loc>
-  <lastmod>2020-07-12T22:58:52+00:00</lastmod>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_one.html</loc>
-  <lastmod>2020-07-12T22:59:02+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_one.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_two.html</loc>
-  <lastmod>2020-07-12T22:59:03+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_three.html</loc>
-  <lastmod>2020-07-12T22:59:03+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_four.html</loc>
-  <lastmod>2020-07-12T22:59:01+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_four.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_five.html</loc>
-  <lastmod>2020-07-12T22:59:01+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_five.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_six.html</loc>
-  <lastmod>2020-07-12T22:59:02+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_six.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_seven.html</loc>
-  <lastmod>2020-07-12T22:59:02+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_seven.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_eight.html</loc>
-  <lastmod>2020-07-12T22:59:00+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_eight.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_nine.html</loc>
-  <lastmod>2020-07-12T22:59:01+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_nine.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_ten.html</loc>
-  <lastmod>2020-07-12T22:59:02+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_ten.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_eleven.html</loc>
-  <lastmod>2020-07-12T22:59:00+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_eleven.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_twelve.html</loc>
-  <lastmod>2020-07-12T22:59:03+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twelve.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_thirteen.html</loc>
-  <lastmod>2020-07-12T22:59:03+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_thirteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_fourteen.html</loc>
-  <lastmod>2020-07-12T22:59:01+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_fourteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chapter_fifteen.html</loc>
-  <lastmod>2020-07-12T22:59:01+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_fifteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_one_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:56+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_sixteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_seventeen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_eighteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_nineteen.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twenty.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentyone.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentytwo.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentythree.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentyfour.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentyfive.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_one_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_one_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_one_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_two_page_two.html</loc>
-  <lastmod>2020-07-12T22:59:00+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_two_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_two_page_three.html</loc>
-  <lastmod>2020-07-12T22:59:00+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_two_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_three_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:59+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_three_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_three_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:59+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_three_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_four_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_four_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_four_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_four_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_five_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:53+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_five_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_five_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:53+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_five_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_six_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:57+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_six_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_six_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:57+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_six_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_seven_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:57+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_seven_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_seven_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:56+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_seven_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_eight_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:52+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eight_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_eight_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:52+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eight_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_nine_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:56+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_nine_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_nine_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_nine_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_ten_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:57+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_ten_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_ten_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:58+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_ten_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_eleven_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:52+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eleven_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_eleven_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:52+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eleven_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_twelve_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:59+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twelve_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_twelve_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:59+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twelve_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_thirteen_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:58+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_thirteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_thirteen_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:58+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_thirteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_fourteen_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_fourteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_fourteen_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:55+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_fourteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_fifteen_page_two.html</loc>
-  <lastmod>2020-07-12T22:58:53+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_fifteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.seagnotes.com/chap_fifteen_page_three.html</loc>
-  <lastmod>2020-07-12T22:58:53+00:00</lastmod>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_fifteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_sixteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_sixteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_seventeen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_seventeen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eighteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_eighteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_nineteen_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_nineteen_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twenty_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twenty_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyone_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyone_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentytwo_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentytwo_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentythree_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentythree_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyfour_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyfour_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyfive_page_two.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyfive_page_three.html</loc>
+  <lastmod>2021-01-22T21:54:51+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 
