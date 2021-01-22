@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
+        <meta name="author" content="Josh Turgasen" />
+        <h1><title>Software Engineering at Google Notes | Chapter #18 Build Systems and Build Philosophy (3 of 3)</title></h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <!-- CSS (includes Bootstrap)-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- ******************** -->
+
+
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-55182074-2');
+        </script>
+        <!-- ************ -->
+
+
+    </head>
+    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="">SEAG Notes</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+        <!-- HEADER-->
+        <header class="header_chapters">
+            <div class="container banner_title_heading">
+                <div class="chapters_page_header">Software Engineering At Google</div>
+                <div class="chapters_number">Chapter #18 Build Systems and Build Philosophy (3 of 3)</div>
+                <div class="col-md-12 line">
+                <span class="linee"></span>
+                </div>
+
+
+            </div>
+        </header>
+        <!-- ****************** -->
+
+
+
+
+
+
+
+
+<div class="container list_chapter_pages">
+<div class="row">
+<div class="col-md-12">
+
+<h2>Chapter #18 Build Systems and Build Philosophy (3 of 3)</h2>
+
+<ul class="bullets_list">
+
+  <li>External dependencies are risky because the build system needs to constantly check to see if they have changed.  If the build system doesn’t check then artifacts will be built with old or non-current versions of the dependency</li>
+  <li>Artifact-based build systems such as Bazel track changes to external dependencies by using hashes.  This means the build system does not need to re-download the external dependency for each build - it only downloads it when it changes (as determined by a change in hash)</li>
+  <li>Using hashes also means that if we build an old version of the software it will be built using the same external dependencies as it did originally (as opposed to pulling down the newest, and perhaps incompatible version of the external dependency)</li>
+  <li>Distributed builds are scaled across multiple systems in order to reduce build time.  Essentially, parts of the build are done in parallel.</li>
+  <li>Google’s system of distributed builds consists of...</li>
+   <ul>
+    <li>Masters that oversee and coordinate the build job across multiple systems and send the results back to the developer</li>
+    <li>Workers that execute parts of the build and send the results back to the master</li>
+    <li>Order of Operations where the master determines which build tasks must be done in which order</li>
+    <li>Remote caching for both workstations and servers.  These caches hold both dependencies (such as libraries) and build artifacts (the end result of a build)</li>
+  </ul>
+  <li>Google recommends using an artifact based build system from day one because that is where you will inevitably end up as your code base and company grow</li>
+  <li>Smaller build targets means more parallelization, less frequent rebuilds (due to caching), and finer grained testing (and retesting)</li>
+  <li>Try to use remote caching of built output instead of caching external dependencies in order to reduce overhead (only rebuild what needs to be rebuilt vs pulling in and building against the same dependences for each rebuild of your project)</li>
+  <li>In the build system you should intentionally limit engineers power and flexibility in order to increase productivity via consistency</li>
+  <li>Dependencies should be deps should be versions explicitly and manually</li>
+  <li>Consider pinning or explicitly stating dependency versions in your build files (eg: don't import package foo but import package foo v1.2.3)</li>
+  <li>The tradeoff for version pinning is convenience (pull down the latest version) vs consistency (always build with v1.2.3)</li>
+  <li>One should mirror external dependencies (eg: NPM packages) internally so that they can be analyzed for security and consistency</li>
+  <li>Another approach is to store dependencies with source code so you know exactly what will be used in each build</li>
+</ul>
+
+
+
+
+<!-- NEXT PREVIOUS -->
+<a href="software_engineering_at_google_book_notes_chap_eighteen_page_two.html" class="next_page_link">
+< BACK
+</a>
+<a href="software_engineering_at_google_book_notes_chapter_nineteen.html" class="next_page_link" style="position: relative;left: 10px;">
+NEXT >
+</a>
+
+<!-- ******* -->
+
+
+</div>
+</div>
+</div>
+
+
+
+
+<!--  -->
+<!-- BUTTONS  and ADSENSE START -->
+<div class="container about_us_section" id="blog">
+
+<div class="container about_us_section" style="margin-top: 140px;">
+
+          <!-- BUTTONS ROW -->
+
+          <div class="row titles_row">
+          <div class="col-md-12">
+          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+          </div>
+          </div>
+          <!-- BUTTONS ROW COMPLETED -->
+
+  </div>
+  <!-- ************* -->
+  <!-- ************* -->
+
+<!-- GOOGLE ADSENSE -->
+<div class="row" style="text-align:center;">
+<div class="col-md-12">
+    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</div>
+</div>
+<!-- ********* -->
+
+</div>
+<!-- ************ -->
+<!-- ************ -->
+
+<!-- FOOTER SECTION START -->
+<div class="container-fluid footer_bg">
+<div class="container">
+
+
+<!-- COPYRIGHT ROW -->
+<div class="row copyright_row">
+<div class="col-md-12">
+  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
+</div>
+</div>
+<!--  -->
+<!--  -->
+
+
+</div>
+</div>
+<!-- FOOTER SECTION COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JS-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Required JS-->
+        <script src="js/scripts.js"></script>
+
+
+
+
+
+
+    </body>
+</html>

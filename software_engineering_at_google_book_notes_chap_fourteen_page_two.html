@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
+        <meta name="author" content="Josh Turgasen" />
+        <h1><title>Software Engineering at Google Notes | Chapter #14 - Larger Testing (2 of 3)</title></h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <!-- CSS (includes Bootstrap)-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- ******************** -->
+
+
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-55182074-2');
+        </script>
+        <!-- ************ -->
+
+
+    </head>
+    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="">SEAG Notes</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+        <!-- HEADER-->
+        <header class="header_chapters">
+            <div class="container banner_title_heading">
+                <div class="chapters_page_header">Software Engineering At Google</div>
+                <div class="chapters_number">Chapter #14 - Larger Testing (2 of 3)</div>
+                <div class="col-md-12 line">
+                <span class="linee"></span>
+                </div>
+
+
+            </div>
+        </header>
+        <!-- ****************** -->
+
+
+
+
+
+
+
+
+<div class="container list_chapter_pages">
+<div class="row">
+<div class="col-md-12">
+
+<h2>Larger Testing (2 of 3)</h2>
+
+<ul class="bullets_list">
+
+  <li>Create hermetic SUTs for your developers (cloud or local)</li>
+  <li>Be prepared for end users to discover test data (or hidden features) that's accessible for engineers via the public API</li>
+  <li>You can reduce the size of your SUT problem boundaries by...
+    <ul>
+      <li>Avoid UI tests (async behaviors are hard to test, tests are brittle due to UI changes (but not implementation changes))</li>
+      <li>Avoiding 3rd party dependencies</li>
+      <li>Replace external DBs with small in-memory ones</li>
+      <li>Consider the cost tradeoffs for fidelity and reliability</li>
+    <ul>
+  </li>
+  <li>Record and replay proxies are HTTP / HTTPS proxies that record the traffic and can "play it back" for testing purposes</li>
+  <li>Consumer Driven Contracts are tests define the contract for both the API server and client. The client sends input and the "test" is the server processes the input and compares to ensure it matches a known output</li>
+  <li>For more info see Pact Contract Testing and Spring Cloud Contracts</li>
+  <li>Google layers their record and replay tests so that a single large test runs and records the traffic. The large test then creates smaller tests and replays that traffic. This allows them to quickly re-run tests in Replay mode.</li>
+  <li>With record and replay as part of your testing strategy you can avoid re-running tests by using captured data</li>
+  <li>Seeded data is data that comes packaged with and is part of the test</li>
+  <li>Test traffic is what's generated as a result of the tests</li>
+  <li>Be sure to seed domain data such as environment config files (DB connect strings)</li>
+  <li>Make it a realistic (large tests at a social network require a large graph)</li>
+  <li>Seed data via APIs if possible, don't bypass them and see the data sources directly</li>
+  <li>Seed data for tests can be hand crafted, copied (usually from prod and scrubbed / anonymized), or sampled (part of all data, reduced due to volume / size)</li>
+  <li>Assertions are checks about the behavior of the system (assert.that.response(contains) "foodata")</li>
+  <li>A/B testing in a pre-production testing context means sending data to 2x instances and comparing the output (it should be the same)</li>
+  <li>When creating tests balance the following: how much risk it mitigates, how much it costs to run, and toil required to maintain</li>
+  <li>The role of Test Engineer at Google often outlines testing strategies for new software projects</li>
+  <li>Functional testing of binaries:
+    <ul>
+      <li>Essentially unit tests in a self-contained package (tests+ code) that runs on a single machine</li>
+      <li>Can be multiple processes</li>
+      <li>Can be used for microservices testing</li>
+    </ul>
+  </li>
+  <li>For browser and device testing the UI is the use's interaction point (not an API), thus it must be tested too</li>
+  <li>Performance, load, and stress testing:
+    <ul>
+      <li>Diff before and after metrics</li>
+      <li>Use handcrafted data or data multiplexed from production</li>
+      <li>Important to do so that a new release can handle spikes in traffic</li>
+      <li>Make tests as close to prod as possible as certain bugs only show themselves at scale or under load</li>
+      <li>Be aware of which system(s) the binaries run on as CPU speeds, affinity, and noisy neighbors may impact results</li>
+    </ul>
+  </li>
+  <li>Deployment configuration testing is smoke testing for config files (httpd.conf, yaml / json, etc)</li>
+  <li>Exploratory testing:
+    <ul>
+      <li>Manual testing that finds weirdness by repeating old user scenarios as well as creating new ones</li>
+      <li>Looks for new paths in the system in serach of security vulernabilities and unexpected behavior</li>
+      <li>"manual fuzzing", hopefully people take different paths in order to exercise more code</li>
+      <li>Like other manual testing it does not scale</li>
+      <li>Create a "bug bash" meeting where people who use the product do nothing but try to break it for an hour</li>
+    </ul>
+  </li>
+
+</ul></ul></li></ul>
+
+
+
+<!-- NEXT PREVIOUS -->
+<a href="software_engineering_at_google_book_notes_chapter_fourteen.html" class="next_page_link">
+< BACK
+</a>
+<a href="software_engineering_at_google_book_notes_chap_fourteen_page_three.html" class="next_page_link" style="position: relative;left: 120px;">
+NEXT >
+</a>
+<!-- ******* -->
+
+
+</div>
+</div>
+</div>
+
+
+
+<!--  -->
+<!-- BUTTONS  and ADSENSE START -->
+<div class="container about_us_section" id="blog">
+
+<div class="container about_us_section" style="margin-top: 140px;">
+
+          <!-- BUTTONS ROW -->
+
+          <div class="row titles_row">
+          <div class="col-md-12">
+          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+          </div>
+          </div>
+          <!-- BUTTONS ROW COMPLETED -->
+
+  </div>
+  <!-- ************* -->
+  <!-- ************* -->
+
+<!-- GOOGLE ADSENSE -->
+<div class="row" style="text-align:center;">
+<div class="col-md-12">
+    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</div>
+</div>
+<!-- ********* -->
+
+</div>
+<!-- ************ -->
+<!-- ************ -->
+
+<!-- FOOTER SECTION START -->
+<div class="container-fluid footer_bg">
+<div class="container">
+
+
+
+<!-- COPYRIGHT ROW -->
+<div class="row copyright_row">
+<div class="col-md-12">
+  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
+</div>
+</div>
+<!--  -->
+<!--  -->
+
+
+</div>
+</div>
+<!-- FOOTER SECTION COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JS-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Required JS-->
+        <script src="js/scripts.js"></script>
+
+
+
+
+
+
+    </body>
+</html>

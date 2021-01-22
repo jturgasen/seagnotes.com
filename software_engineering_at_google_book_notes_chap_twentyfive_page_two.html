@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
+        <meta name="author" content="Josh Turgasen" />
+        <h1><title>Software Engineering at Google Notes | Chapter #25 Compute as a Service (2 of 3)</title></h1>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+        <!-- CSS (includes Bootstrap)-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- ******************** -->
+
+
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-55182074-2');
+        </script>
+        <!-- ************ -->
+
+
+    </head>
+    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+
+
+
+
+
+
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <span class="">SEAG Notes</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
+        <!-- HEADER-->
+        <header class="header_chapters">
+            <div class="container banner_title_heading">
+                <div class="chapters_page_header">Software Engineering At Google</div>
+                <div class="chapters_number">Chapter #25 Compute as a Service (2 of 3)</div>
+                <div class="col-md-12 line">
+                <span class="linee"></span>
+                </div>
+
+
+            </div>
+        </header>
+        <!-- ****************** -->
+
+
+
+
+
+
+
+
+<div class="container list_chapter_pages">
+<div class="row">
+<div class="col-md-12">
+
+<h2>Chapter #25 Compute as a Service (2 of 3)</h2>
+
+<ul class="bullets_list">
+
+  <li>Google has refined their processes to a point where entire data centers can be automatically spun up with almost no human intervention and very little risk</li>
+  <li>Engineers need to "design for failure" and assume the VMs or containers that run their software will fail.  How will their software react to and recover from these failures?</li>
+  <li>Work should be broken up into chunks and those chunks send back to a master so that if there is a failure the entire process does not need to be restarted - only the part that failed needs to be reprocessed</li>
+  <li>Instead of a human monitoring VMs / containers the data center scheduler monitors them and if one dies it will start a new one (pets vs cattle)</li>
+  <li>Pet servers are unique and you need humans to feed and care for them</li>
+  <li>Cattle servers are all the same and if one dies you can spin up a new one</li>
+  <li>Also consider planned maintenance vs unplanned outages.  If there is a planned maintenance the data center scheduler should drain and redirect the traffic without simply killing the container or VM</li>
+  <li>In general there are two types of jobs that run on compute: Batch and serving</li>
+  <li>Batch jobs are concerned about throughput and are short lived</li>
+  <li>Serving jobs care about latency of a single request and are long lived (restarted when new code is pushed)</li>
+  <li>Serving jobs are easier to reason about when it comes to failure because for an application all serving nodes are the same thus it's easy to spin up a new one when one dies, no retry logic is needed</li>
+  <li>Serving jobs should be over-provisioned to serve traffic spikes without significant latency increases</li>
+  <li>Do not be tempted to use this over-provisioned area to run batch jobs as it defeats the purpose of the over-provisioning (what happens when there is a large and fast traffic increase and the serving job cannot expand because there is a batch job running?)</li>
+  <li>If you do put over-provisioned serving jobs and batch jobs on the same system be certain to have a way to automatically kill the batch jobs when there is a traffic spike</li>
+  <li>Google has the capacity to do this and thus most of their batch jobs run for "free" and are quickly killed when there's a traffic spike</li>
+  <li>Any serving job (such as a cluster master or leader) will have application state in memory and/or on disk and thus extra considerations must be taken (usually in the form of redundancy, backup masters, etc)</li>
+  <li>Another serving job to consider is when the machines are sharded and each machine serves part of the data.  If a machine fails then it must be restarted with the proper data and that data may be unavailable to users while the new machine is being spun up</li>
+  <li>One way to deal with stateful data is to keep it on persistent storage that is external to the VM or container such as a RAID array or NAS</li>
+
+</ul>
+
+
+
+<!-- NEXT PREVIOUS -->
+<a href="software_engineering_at_google_book_notes_chapter_twentyfour.html" class="next_page_link">
+< BACK
+</a>
+<a href="software_engineering_at_google_book_notes_chap_twentyfive_page_three.html" class="next_page_link" style="position: relative;left: 120px;">
+NEXT >
+</a>
+<!-- ******* -->
+
+
+</div>
+</div>
+</div>
+
+
+<!--  -->
+<!-- BUTTONS  and ADSENSE START -->
+<div class="container about_us_section" id="blog">
+
+<div class="container about_us_section" style="margin-top: 140px;">
+
+          <!-- BUTTONS ROW -->
+
+          <div class="row titles_row">
+          <div class="col-md-12">
+          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+          </div>
+          </div>
+          <!-- BUTTONS ROW COMPLETED -->
+
+  </div>
+  <!-- ************* -->
+  <!-- ************* -->
+
+<!-- GOOGLE ADSENSE -->
+<div class="row" style="text-align:center;">
+<div class="col-md-12">
+    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</div>
+</div>
+<!-- ********* -->
+
+</div>
+<!-- ************ -->
+<!-- ************ -->
+
+<!-- FOOTER SECTION START -->
+<div class="container-fluid footer_bg">
+<div class="container">
+
+<!-- COPYRIGHT ROW -->
+<div class="row copyright_row">
+<div class="col-md-12">
+  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
+</div>
+</div>
+<!--  -->
+<!--  -->
+
+
+</div>
+</div>
+<!-- FOOTER SECTION COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JS-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Required JS-->
+        <script src="js/scripts.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
