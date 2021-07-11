@@ -1,1 +1,2 @@
 User-agent: * Disallow: /private/
+Sitemap: https://www.seagnotes.com/sitemap.xml

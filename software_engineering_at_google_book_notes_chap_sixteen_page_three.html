@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #16 Version Control and Branch Management (3 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 16 version control and branch management“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #16 Version Control and Branch Management (3 of 3)
+    </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_sixteen_page_three.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
+</head>
 
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,148 +58,178 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #16 Version Control and Branch Management (3 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #16 Version Control and Branch Management (3 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #16 - Version Control and Branch Management (3 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>A frequently used pattern is the “feature branch” or “dev branch” pattern. Each new branch maps
+                        to a new feature of the software, a JIRA ticket, a bug report, or similar</li>
+                    <li>The disadvantages of feature or dev branch pattern are twofold:</li>
+                    <li>It leads to large commits (changes). The larger the commit the harder it is to understand what
+                        changed. Smaller commits take less mental overhead.</li>
+                    <li>It takes more effort to keep things in sync both from a human and technical perspective. If it
+                        takes a long time to finish the branch then when it comes time to merge into default / trunk /
+                        head there may be many merge conflicts because the trunk branch has changed so much since the
+                        user started on their feature / dev branch</li>
+                    <li>Trunk-based development is when all commits are merged directly into the main / head / default /
+                        master branch. In other words users do not create their own branches.</li>
+                    <li>In trunk-based development there is a true single source of truth (the main branch). When using
+                        a feature or development based method there are multiple sources of truth (trunk and the WIP
+                        branches on each developer’s laptop)</li>
+                    <li>Trunk based development requires little or no coordination because many small commits are made
+                        to the main branch</li>
+                    <li>Instead of a dev / feature branch pattern Google recommends trunk-based development with heavy
+                        Continuous Integration and pre-build testing</li>
+                    <li>Overall Google sees non-trunk development as a crutch for lack of testing. More testing brings
+                        more confidence</li>
+                    <li>A release branch is all of the exact code that was pushed to production</li>
+                    <li>At Google “every build job needs to be rebuilt and redeployed every 6 months”. This ensures each
+                        build is working correctly and if not it can be fixed quickly so errors don’t build up over the
+                        years</li>
+                    <li>One-Version Rule : Don’t give devs a choice about which library to add or where to commit or
+                        when to fork. Have a workflow and stick to it for consistency.</li>
+                    <li>Google uses a “monorepo” - a single repository for all of the company’s code. Very few companies
+                        use this pattern</li>
+                    <li>It is hard to do compliance & secrecy if you use a mono-repo because different parts of the repo
+                        have different requirements libraries or operating system</li>
+                </ul>
+
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_sixteen_page_two.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chapter_seventeen.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<h2>Chapter #16 Version Control and Branch Management (3 of 3)</h2>
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<ul class="bullets_list">
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-  <li>A frequently used pattern is the “feature branch” or “dev branch” pattern.  Each new branch maps to a new feature of the software, a JIRA ticket, a bug report, or similar</li>
-  <li>The disadvantages of feature or dev branch pattern are twofold:</li>
-  <li>It leads to large commits (changes).  The larger the commit the harder it is to understand what changed.  Smaller commits take less mental overhead.</li>
-  <li>It takes more effort to keep things in sync both from a human and technical perspective.  If it takes a long time to finish the branch then when it comes time to merge into default / trunk / head there may be many merge conflicts because the trunk branch has changed so much since the user started on their feature / dev branch</li>
-  <li>Trunk-based development is when all commits are merged directly into the main / head / default / master branch.  In other words users do not create their own branches.</li>
-  <li>In trunk-based development there is a true single source of truth (the main branch).  When using a feature or development based method there are multiple sources of truth (trunk and the WIP branches on each developer’s laptop)</li>
-  <li>Trunk based development requires little or no coordination because many small commits are made to the main branch</li>
-  <li>Instead of a dev / feature branch pattern Google recommends trunk-based development with heavy Continuous Integration and pre-build testing</li>
-  <li>Overall Google sees non-trunk development as a crutch for lack of testing.  More testing brings more confidence</li>
-  <li>A release branch is all of the exact code that was pushed to production</li>
-  <li>At Google “every build job needs to be rebuilt and redeployed every 6 months”.  This ensures each build is working correctly and if not it can be fixed quickly so errors don’t build up over the years</li>
-  <li>One-Version Rule : Don’t give devs a choice about which library to add or where to commit or when to fork.  Have a workflow and stick to it for consistency.</li>
-  <li>Google uses a “monorepo” - a single repository for all of the company’s code.  Very few companies use this pattern</li>
-  <li>It is hard to do compliance & secrecy if you use a mono-repo because different parts of the repo have different requirements libraries or operating system</li>
-</ul>
 
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_sixteen_page_two.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chapter_seventeen.html" class="next_page_link" style="position: relative;left: 10px;">
-NEXT >
-</a>
 
-<!-- ******* -->
 
 
-</div>
-</div>
-</div>
 
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -195,37 +239,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
-
-
-
-
-
-
-    </body>
 </html>

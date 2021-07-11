@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #21 Dependency Management (2 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 21 dependency management“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #21 Dependency Management (2 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyone_page_two.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+</head>
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
-
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,170 +56,180 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #21 Dependency Management (2 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #21 Dependency Management (2 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #21 - Dependency Management (2 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>At Google they repeatedly remind their engineers of the difference between "I got it working" vs
+                        "it is working in a long term supportable fashion" (maintenance over time)</li>
+                    <li>When Google engineers import a new dependency into a project they are encouraged to ask
+                        themselves the following questions...</li>
+                    <li>Does the project have tests and do the tests still pass after you import the new dependency?
+                    </li>
+                    <li>Who is providing the dependency (well established project vs random repo on GitHub)?</li>
+                    <li>What sort of compatibility does the project need (short, medium, long term)?</li>
+                    <ul>
+                        <li>How popular is the project?</li>
+                        <li>How long will we depend on this project?</li>
+                        <li>How often does our project make breaking changes?</li>
+                        <li>What sort of usage will the project get (wide-spread vs infrequent)?</li>
+                        <li>Who will upgrade the dependency when the time inevitably comes?</li>
+                        <li>What are the incentives to keep the project up to date?</li>
+                    </ul>
+                    <li>Most problems in dependency management stop being problems when you have full visibility into
+                        how the project's source code is used and thus can see the impact of any change.</li>
+                    <li>Example: Google's monorepo pattern allows complete visibility (because 100% of the code is in a
+                        single repo) where as a NodeJS project will only have the NodeJS code in the repo and not the
+                        NPM dependencies. Without the dependencies being available one cannot easily see and reason
+                        about what a change may affect.</li>
+                    <li>A solid dependency management strategy must not assume infinite compatibility nor can it assume
+                        a stable and unchanging dependency graph</li>
+                    <li>There are four common dependency management strategies...</li>
+                    <ul>
+                        <li>Nothing Changes</li>
+                        <li>Semantic Versioning</li>
+                        <li>Bundle Everything</li>
+                        <li>Live at Head</li>
+                    </ul>
+                    <li>The <b>Nothing changes</b> model...</li>
+                    <ul>
+                        <li>Only allows changes that will not break user code</li>
+                        <li>This model prioritizes stability and compatibility over all else</li>
+                        <li>From a practical perspective this method isn't sustainable, but...</li>
+                        <li>It's where most organizations start because they can't say for certain how long their
+                            software will be in use</li>
+                        <li>The largest issue with long-term use of this model is that even if the code works fine there
+                            will be inevitably be security bugs that need to be fixed and those changes may break the
+                            project</li>
+                        <li>There are no decisions that need to be made because there are no versions (everything is
+                            statically linked into a single binary)</li>
+                    </ul>
+                    <li>The <b>semantic versioning or SemVer</b> model...</li>
+                    <ul>
+                        <li>Is the current de-facto standard for most software</li>
+                        <li>This model uses version numbers such as 2.14.5 where 2 is the major version, 14 is the minor
+                            version, and 5 is the patch version</li>
+                        <li>Changes to the major version can break API compatibility with older versions</li>
+                        <li>Minor version changes are for added functionality and patch version change are for
+                            non-breaking patches</li>
+                        <li>When using SemVer you will often see things like "requires version >= 2.14.5"</li>
+                        <li>Packaging systems (NPM, RPM, PiPi, etc) have "solvers" to automatically determine dependency
+                            trees</li>
+                    </ul>
+                </ul>
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chapter_twentyone.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chap_twentyone_page_three.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
+
+        <div class="container about_us_section" style="margin-top: 140px;">
+
+            <!-- BUTTONS ROW -->
+
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
+
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
+
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
+
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
+
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
-
-
-
-
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
-
-<h2>Chapter #21 Dependency Management (2 of 3)</h2>
-
-<ul class="bullets_list">
-
-  <li>At Google they repeatedly remind their engineers of the difference between "I got it working" vs "it is working in a long term supportable fashion" (maintenance over time)</li>
-  <li>When Google engineers import a new dependency into a project they are encouraged to ask themselves the following questions...</li>
-  <li>Does the project have tests and do the tests still pass after you import the new dependency?</li>
-  <li>Who is providing the dependency (well established project vs random repo on GitHub)?</li>
-  <li>What sort of compatibility does the project need (short, medium, long term)?</li>
-   <ul>
-    <li>How popular is the project?</li>
-    <li>How long will we depend on this project?</li>
-    <li>How often does our project make breaking changes?</li>
-    <li>What sort of usage will the project get (wide-spread vs infrequent)?</li>
-    <li>Who will upgrade the dependency when the time inevitably comes?</li>
-    <li>What are the incentives to keep the project up to date?</li>
-   </ul>
-  <li>Most problems in dependency management stop being problems when you have full visibility into how the project's source code is used and thus can see the impact of any change.</li>
-  <li>Example: Google's monorepo pattern allows complete visibility (because 100% of the code is in a single repo) where as a NodeJS project will only have the NodeJS code in the repo and not the NPM dependencies.  Without the dependencies being available one cannot easily see and reason about what a change may affect.</li>
-  <li>A solid dependency management strategy must not assume infinite compatibility nor can it assume a stable and unchanging dependency graph</li>
-  <li>There are four common dependency management strategies...</li>
-   <ul>
-    <li>Nothing Changes</li>
-    <li>Semantic Versioning</li>
-    <li>Bundle Everything</li>
-    <li>Live at Head</li>
-   </ul>
-  <li>The <b>Nothing changes</b> model...</li>
-   <ul>
-    <li>Only allows changes that will not break user code</li>
-    <li>This model prioritizes stability and compatibility over all else</li>
-    <li>From a practical perspective this method isn't sustainable, but...</li>
-    <li>It's where most organizations start because they can't say for certain how long their software will be in use</li>
-    <li>The largest issue with long-term use of this model is that even if the code works fine there will be inevitably be security bugs that need to be fixed and those changes may break the project</li>
-    <li>There are no decisions that need to be made because there are no versions (everything is statically linked into a single binary)</li>
-   </ul>
-  <li>The <b>semantic versioning or SemVer</b> model...</li>
-   <ul>
-    <li>Is the current de-facto standard for most software</li>
-    <li>This model uses version numbers such as 2.14.5 where 2 is the major version, 14 is the minor version, and 5 is the patch version</li>
-    <li>Changes to the major version can break API compatibility with older versions</li>
-    <li>Minor version changes are for added functionality and patch version change are for non-breaking patches</li>
-    <li>When using SemVer you will often see things like "requires version >= 2.14.5"</li>
-    <li>Packaging systems (NPM, RPM, PiPi, etc) have "solvers" to automatically determine dependency trees</li>
-   </ul>
-</ul>
-
-
-
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chapter_twentyone.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_twentyone_page_three.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
-
-
-</div>
-</div>
-</div>
-
-
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
-
-<div class="container about_us_section" style="margin-top: 140px;">
-
-          <!-- BUTTONS ROW -->
-
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
-
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
-
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
-
-</div>
-<!-- ************ -->
-<!-- ************ -->
-
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
-
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
-
-
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -236,18 +258,19 @@ NEXT >
 
 
 
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
-    </body>
+</body>
+
 </html>

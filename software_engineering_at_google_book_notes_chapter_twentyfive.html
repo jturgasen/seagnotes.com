@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #25 Compute as a Service (1 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 25 compute as a service“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #25 Compute as a Service (1 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentyfive.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+</head>
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
-
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,150 +56,173 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #25 Compute as a Service (1 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #25 Compute as a Service (1 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #25 - Compute as a Service (1 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>Cattle not pets and a flexible scheduling architecture have achieved great success at Google
+                    </li>
+                    <li>The "automation of toil" is what drove Google and others to create automated compute
+                        environments</li>
+                    <li>Several pages talk about the evolution of this automation using older methods (manually spinning
+                        up VMs, using shell scripts to push the binaries, manually fixing VMs, etc)</li>
+                    <li>These solutions do not scale, require a great deal of human involvement, and are superseded by
+                        more modern approaches such as containers and Kubernetes / Mesos schedulers</li>
+                    <li>Containers create a sandboxed environment for things to run in</li>
+                    <li>You can set memory and CPU limits on containers and multiple containers can live on the same
+                        virtual machine</li>
+                    <li>This allows for denser "bin packing" and more efficient use of compute resources</li>
+                    <li>In a non-containerized multi-tenant setup you will run into contention issues as the size of the
+                        applications grow</li>
+                    <li>These issues include swapping due to increased RAM usage and increased latency due to CPU
+                        contention</li>
+                    <li>As such, you need an isolation mechanism such as containers</li>
+                    <li>Virtual machines (VMs) also work for tenant isolation but they are slow to spin up and create a
+                        great deal of overhead</li>
+                    <li>Also consider how limits on some resources can impose limitations (max file handles, number of
+                        PIDs, number of threads, etc)</li>
+                    <li>When it comes to rightsizing, letting the user choose and automatically choosing are both tricky
+                        to get right</li>
+                    <li>Your organization will grow on the following 3 axises...</li>
+                    <ul>
+                        <li>Size of the largest application</li>
+                        <li>Number of copies of an application that need to be run</li>
+                        <li>Number of different and unique applications that need to be run at the time</li>
+                    </ul>
+                </ul>
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_twentyfour_page_three.html"
+                    class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chap_twentyfive_page_two.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<h2>Chapter #25 Compute as a Service (1 of 3)</h2>
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-<ul class="bullets_list">
 
-  <li>Cattle not pets and a flexible scheduling architecture have achieved great success at Google</li>
-  <li>The "automation of toil" is what drove Google and others to create automated compute environments</li>
-  <li>Several pages talk about the evolution of this automation using older methods (manually spinning up VMs, using shell scripts to push the binaries, manually fixing VMs, etc)</li>
-  <li>These solutions do not scale, require a great deal of human involvement, and are superseded by more modern approaches such as containers and Kubernetes / Mesos schedulers</li>
-  <li>Containers create a sandboxed environment for things to run in</li>
-  <li>You can set memory and CPU limits on containers and multiple containers can live on the same virtual machine</li>
-  <li>This allows for denser "bin packing" and more efficient use of compute resources</li>
-  <li>In a non-containerized multi-tenant setup you will run into contention issues as the size of the applications grow</li>
-  <li>These issues include swapping due to increased RAM usage and increased latency due to CPU contention</li>
-  <li>As such, you need an isolation mechanism such as containers</li>
-  <li>Virtual machines (VMs) also work for tenant isolation but they are slow to spin up and create a great deal of overhead</li>
-  <li>Also consider how limits on some resources can impose limitations (max file handles, number of PIDs, number of threads, etc)</li>
-  <li>When it comes to rightsizing, letting the user choose and automatically choosing are both tricky to get right</li>
-  <li>Your organization will grow on the following 3 axises...</li>
-   <ul>
-    <li>Size of the largest application</li>
-    <li>Number of copies of an application that need to be run</li>
-    <li>Number of different and unique applications that need to be run at the time</li>
-   </ul>
-</ul>
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_twentyfour_page_three.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_twentyfive_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
 
 
-</div>
-</div>
-</div>
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -199,35 +234,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
-
-
-
-
-
-
-    </body>
 </html>

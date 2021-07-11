@@ -1,88 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #7 - Measuring Engineering Productivity (1 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+    practices development best practices at google SWE chapter 7 measuring engineering productivity“ />
+  <meta name="author" content="Josh Turgasen" />
+  <title>Software Engineering at Google Book Notes | Chapter #7 - Measuring Engineering Productivity (1 of 3)</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS (includes Bootstrap)-->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- ******************** -->
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+  <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_seven.html” rel=”canonical” />
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'UA-55182074-2');
+  </script>
+  <!-- ************ -->
 
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
-
-
-
-
-
-
-
-
-
-
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
-                <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <!-- Google AdSense -->
+  <script data-ad-client="ca-pub-6903946585816068" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- ************** -->
 
 
 
+</head>
 
-
-
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #7 - Measuring Engineering Productivity (1 of 3)</div>
-                <div class="col-md-12 line">
-                <span class="linee"></span>
-                </div>
-
-
-            </div>
-        </header>
-        <!-- ****************** -->
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -91,106 +53,159 @@
 
 
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
 
-<h2>Measuring Engineering Productivity (1 of 3)</h2>
 
-<ul class="bullets_list">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <span class="">SEAG Notes</span></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+          </li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+          </li>
 
-  <li>Be a data driven company</li>
-  <li>As organizations grow linearly, communications costs grow quadratically</li>
-  <li>By increasing the productivity of individuals, you can increase your business’ scope without the increased communication overhead</li>
-  <li>Linters help code reviews scale</li>
-  <li>Create a team dedicated to engineering productivity. Have it’s members be from a wide variety of fields (psychologists, software engineers, behavioral economists, and more).</li>
-  <li>This team is essentially “Engineering productivity specialists”</li>
-  <li>Is a metric worth measuring?</li>
-  <li>Does measuring the metric slow down the organization?</li>
-  <li>Tracking progress may change engineers behavior (“observer effect”) and the behavior change may serve to mask the underlying issues</li>
-  <li>To know if a metric is worth measuring, ask people to describe what they want to measure in the form of a solid, concrete reason or answer. The more concrete the answer is, the more likely the metric is worth measuring</li>
-  <li>Beware “anticdata” (single anecdotes that masquerade as data), it is powerful</li>
-  <li>In addition to the question above, ask the following questions:
-    <ul>
-      <li>If the data supports your expected result, what action will need to be taken due to that result?</li>
-      <li>If no action will be taken then there is no need to measure</li>
-      <li>What result are you expecting, and why? (This acknowledges biases at the beginning)</li>
-      <li>If we get a negative result, will action be taken?</li>
-      <li>Does a negative result change your decision? If not, then why measure? You are not using the results of the measurement to make a decision, but rather to justify an existing decision.</li>
-      <li>Who will decide to take action on the result and when will they take action? This ensures the person asking for the measurement is empowered to make decisions based on the results or that the person is representative of someone who can make the decision. The other purpose is to determine who the decision maker is so we can get them the data in a form that they want (quantitative vs qualitative)</li>
-    </ul>
-  </li>
-</ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_six_page_three.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_seven_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
-
-
-</div>
-</div>
-</div>
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
+  <!-- HEADER-->
+  <header class="header_chapters">
+    <div class="container banner_title_heading">
+      <div class="chapters_page_header">Software Engineering At Google</div>
+      <div class="chapters_number">Chapter #7 - Measuring Engineering Productivity (1 of 3)</div>
+      <div class="col-md-12 line">
+        <span class="linee"></span>
+      </div>
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
+    </div>
+  </header>
+  <!-- ****************** -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
+
+
+
+
+
+
+
+  <div class="container list_chapter_pages">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1>Software Engineering at Google Chapter #7 - Measuring Engineering Productivity (1 of 3)</h1>
+
+        <ul class="bullets_list">
+
+          <li>Be a data driven company</li>
+          <li>As organizations grow linearly, communications costs grow quadratically</li>
+          <li>By increasing the productivity of individuals, you can increase your business’ scope without the increased
+            communication overhead</li>
+          <li>Linters help code reviews scale</li>
+          <li>Create a team dedicated to engineering productivity. Have it’s members be from a wide variety of fields
+            (psychologists, software engineers, behavioral economists, and more).</li>
+          <li>This team is essentially “Engineering productivity specialists”</li>
+          <li>Is a metric worth measuring?</li>
+          <li>Does measuring the metric slow down the organization?</li>
+          <li>Tracking progress may change engineers behavior (“observer effect”) and the behavior change may serve to
+            mask the underlying issues</li>
+          <li>To know if a metric is worth measuring, ask people to describe what they want to measure in the form of a
+            solid, concrete reason or answer. The more concrete the answer is, the more likely the metric is worth
+            measuring</li>
+          <li>Beware “anticdata” (single anecdotes that masquerade as data), it is powerful</li>
+          <li>In addition to the question above, ask the following questions:
+            <ul>
+              <li>If the data supports your expected result, what action will need to be taken due to that result?</li>
+              <li>If no action will be taken then there is no need to measure</li>
+              <li>What result are you expecting, and why? (This acknowledges biases at the beginning)</li>
+              <li>If we get a negative result, will action be taken?</li>
+              <li>Does a negative result change your decision? If not, then why measure? You are not using the results
+                of the measurement to make a decision, but rather to justify an existing decision.</li>
+              <li>Who will decide to take action on the result and when will they take action? This ensures the person
+                asking for the measurement is empowered to make decisions based on the results or that the person is
+                representative of someone who can make the decision. The other purpose is to determine who the decision
+                maker is so we can get them the data in a form that they want (quantitative vs qualitative)</li>
+            </ul>
+          </li>
+        </ul>
+
+
+
+        <!-- NEXT PREVIOUS -->
+        <a href="software_engineering_at_google_book_notes_chap_six_page_three.html" class="next_page_link">
+          < BACK </a>
+            <a href="software_engineering_at_google_book_notes_chap_seven_page_two.html" class="next_page_link"
+              style="position: relative;left: 190px;">
+              NEXT >
+            </a>
+            <!-- ******* -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--  -->
+  <!-- BUTTONS  and ADSENSE START -->
+  <div class="container about_us_section" id="blog">
+
+    <div class="container about_us_section" style="margin-top: 140px;">
+
+      <!-- BUTTONS ROW -->
+
+      <div class="row titles_row">
+        <div class="col-md-12">
           <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
+        </div>
+      </div>
+      <!-- BUTTONS ROW COMPLETED -->
+
+    </div>
+    <!-- ************* -->
+    <!-- ************* -->
 
   </div>
-  <!-- ************* -->
-  <!-- ************* -->
+  <!-- ************ -->
+  <!-- ************ -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
-
-</div>
-<!-- ************ -->
-<!-- ************ -->
-
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
+  <!-- FOOTER SECTION START -->
+  <div class="container-fluid footer_bg">
+    <div class="container">
 
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
+      <!-- COPYRIGHT ROW -->
+      <div class="row copyright_row">
+        <div class="col-md-12">
+          <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+          <span class="copyright_title">All product names, logos, and trademarks are property of their respective
+            owners</span>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
+    </div>
+  </div>
+  <!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -219,18 +234,19 @@ NEXT >
 
 
 
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
+  <!-- JS-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="js/jquery.easing.min.js"></script>
+  <!-- Required JS-->
+  <script src="js/scripts.js"></script>
 
 
 
 
 
 
-    </body>
+</body>
+
 </html>

@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #23 Continuous Integration (2 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 23 continuous integration“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #23 Continuous Integration (2 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentythree_page_two.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+</head>
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
-
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,158 +56,164 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #23 Continuous Integration (2 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #23 Continuous Integration (2 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #23 - Continuous Integration (2 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>Some examples of feedback loops from fastest to slowest...</li>
+                    <ul>
+                        <li>Edit, compile, debug loop of local development</li>
+                        <li>Automated tests at pre-submit</li>
+                        <li>Integration errors between two projects that are detected post-submit</li>
+                        <li>Bug reports from internal users who opt-in to be early-testers</li>
+                        <li>Bug reports from external users or the press or production outages</li>
+                    </ul>
+                    <li>A <b>canary</b> deploy is when only a small number of servers are upgraded with the new
+                        production code</li>
+                    <li>This allows the code to run in a real production environment but allows for fast rollbacks and
+                        limited impact if there are issues</li>
+                    <li>If the canary deploy is successful all servers are then upgraded to the new code</li>
+                    <li>The downside of canary deploys is in large environments where there are multiple versions of the
+                        code, data, and/or configuration running at the same time</li>
+                    <li>This can happen when a large number of engineers are working on the same code and it is known as
+                        version skew</li>
+                    <li>Feature flags will be discussed in Chapter 24 Continuous Delivery</li>
+                    <li>At Google anyone can see the output of any test run</li>
+                    <li>The system also uses these logs to see when builds started to fail or become flakey</li>
+                    <li>Visibility into test history empowers engineers</li>
+                    <li>Continuous Build (CB) builds the head / master / main branch and reports a green (good) or red
+                        (broke) status</li>
+                    <li>In a scenario where an organization uses CB there are two "heads" - the true head (most recent
+                        commit, good or not) and the "green head" (last successful build)</li>
+                    <li>At Google most teams release the known good "green head" instead of the constantly moving "true
+                        head" that may or may not work</li>
+                    <li>Version skew can be caught during the release candidate promotion process</li>
+                    <li>Continuous Delivery is "the continual assembling and promotion of release candidates through the
+                        various environments"</li>
+                    <li>One can do selective CD by using feature flags and/or experiments</li>
+                    <li>As a RC moves from environment to environment it's binaries are not rebuilt each time</li>
+                    <li>During this process one should not only test and verify the code but the configurations as well
+                    </li>
+                    <li>You should only run necessary tests during pre-submit, not all tests. This is because engineer
+                        time is very valuable</li>
+                    <li>Only "fast, reliable" tests should be run during pre-submit. Scope them to the project itself
+                        (not interactions with external interfaces or projects)</li>
+                    <li>Post-submit tests can be more flakey and less reliable</li>
+
+                </ul>
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chapter_twentythree.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chap_twentythree_page_three.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
+
+        <div class="container about_us_section" style="margin-top: 140px;">
+
+            <!-- BUTTONS ROW -->
+
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
+
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
+
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
+
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
+
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
-
-
-
-
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
-
-<h2>Chapter #23 Continuous Integration (2 of 3)</h2>
-
-<ul class="bullets_list">
-
-  <li>Some examples of feedback loops from fastest to slowest...</li>
-   <ul>
-    <li>Edit, compile, debug loop of local development</li>
-    <li>Automated tests at pre-submit</li>
-    <li>Integration errors between two projects that are detected post-submit</li>
-    <li>Bug reports from internal users who opt-in to be early-testers</li>
-    <li>Bug reports from external users or the press or production outages</li>
-   </ul>
-  <li>A <b>canary</b> deploy is when only a small number of servers are upgraded with the new production code</li>
-  <li>This allows the code to run in a real production environment but allows for fast rollbacks and limited impact if there are issues</li>
-  <li>If the canary deploy is successful all servers are then upgraded to the new code</li>
-  <li>The downside of canary deploys is in large environments where there are multiple versions of the code, data, and/or configuration running at the same time</li>
-  <li>This can happen when a large number of engineers are working on the same code and it is known as version skew</li>
-  <li>Feature flags will be discussed in Chapter 24 Continuous Delivery</li>
-  <li>At Google anyone can see the output of any test run</li>
-  <li>The system also uses these logs to see when builds started to fail or become flakey</li>
-  <li>Visibility into test history empowers engineers</li>
-  <li>Continuous Build (CB) builds the head / master / main branch and reports a green (good) or red (broke) status</li>
-  <li>In a scenario where an organization uses CB there are two "heads" - the true head (most recent commit, good or not) and the "green head" (last successful build)</li>
-  <li>At Google most teams release the known good "green head" instead of the constantly moving "true head" that may or may not work</li>
-  <li>Version skew can be caught during the release candidate promotion process</li>
-  <li>Continuous Delivery is "the continual assembling and promotion of release candidates through the various environments"</li>
-  <li>One can do selective CD by using feature flags and/or experiments</li>
-  <li>As a RC moves from environment to environment it's binaries are not rebuilt each time</li>
-  <li>During this process one should not only test and verify the code but the configurations as well</li>
-  <li>You should only run necessary tests during pre-submit, not all tests.  This is because engineer time is very valuable</li>
-  <li>Only "fast, reliable" tests should be run during pre-submit.  Scope them to the project itself (not interactions with external interfaces or projects)</li>
-  <li>Post-submit tests can be more flakey and less reliable</li>
-
-</ul>
-
-
-
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chapter_twentythree.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_twentythree_page_three.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
-
-
-</div>
-</div>
-</div>
-
-
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
-
-<div class="container about_us_section" style="margin-top: 140px;">
-
-          <!-- BUTTONS ROW -->
-
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
-
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
-
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
-
-</div>
-<!-- ************ -->
-<!-- ************ -->
-
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
-
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
-
-
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -224,18 +242,19 @@ NEXT >
 
 
 
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
-    </body>
+</body>
+
 </html>

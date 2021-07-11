@@ -1,194 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #16 Version Control and Branch Management (1 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 16 version control and branch management“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #16 Version Control and Branch Management (1 of 3)
+    </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_sixteen.html”
+        rel=”canonical” />
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
 
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
-
-
-
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
 
+</head>
+
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+
+
+
+
+
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #16 Version Control and Branch Management (1 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #16 Version Control and Branch Management (1 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #16 - Version Control and Branch Management (1 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>VCS stands for Version Control System and modern tools such as git / GitHub are DCVS
+                        (Distributed Concurrent Version Systems)</li>
+                    <li>Old VCS did not allow multiple users to work on the same file(s) at the same time but modern
+                        DCVS such as git / GitHub do</li>
+                    <li>VCS are better than a shared file or directory because it allows multiple people to work on the
+                        code as the same time vs “locking a file” for one user at a time to edit
+                    <li>The VCS / DCVS is the “source of truth” for the application’s source code and optionally related
+                        files (build configurations, etc)</li>
+                    <li>Modern VCS are called “distributed VCS” because users clone / copy / download the entire repo
+                        from a central server and thus if the server fails we can restore from a fairly up to date
+                        version of the repo from a user’s laptop</li>
+                    <li>This allows multiple people to work on the same repo simultaneously and there is no need for
+                        users to manually coordinate their changes</li>
+                    <li>A “repo” is a directory tree that is under VCS control</li>
+                    <li>Each repo records a history of what changed for each file during each commit</li>
+                    <li>Recording a history means you can roll back to a previous commit, see who made which changes, or
+                        build a binary from a previous commit (not just the most recent)</li>
+                    <li>When a user works on source code that is under DCVS control they start by copying a repo from a
+                        server to their laptop</li>
+                    <li>After a user makes changes they “commit” their work and the changes are pushed from their laptop
+                        back to the server</li>
+                    <li>Each time a user pushes their commits to the repo the server determines the different between
+                        the user’s changes and the latest version</li>
+                    <li>Each repo has a main branch and that is called the head, trunk, master, or default branch.
+                        Changes are merged into this branch.</li>
+                    <li>In summary...</li>
+                    <ul>
+                        <li>Each user works on his or her own branch to make changes</li>
+                        <li>The branch is pushed to the server </li>
+                        <li>The code is reviewed</li>
+                        <li>The code is merged into the head / trunk / default / master / main branch</li>
+                    </ul>
+                </ul>
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_fifteen_page_three.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chap_sixteen_page_two.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<h2>Chapter #16 Version Control and Branch Management (1 of 3)</h2>
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-<ul class="bullets_list">
 
-  <li>VCS stands for Version Control System and modern tools such as git / GitHub are DCVS (Distributed Concurrent Version Systems)</li>
-  <li>Old VCS did not allow multiple users to work on the same file(s) at the same time but modern DCVS such as git / GitHub do</li>
-  <li>VCS are better than a shared file or directory because it allows multiple people to work on the code as the same time vs “locking a file” for one user at a time to edit
-  <li>The VCS / DCVS is the “source of truth” for the application’s source code and optionally related files (build configurations, etc)</li>
-  <li>Modern VCS are called “distributed VCS” because users clone / copy / download the entire repo from a central server and thus if the server fails we can restore from a fairly up to date version of the repo from a user’s laptop</li>
-  <li>This allows multiple people to work on the same repo simultaneously and there is no need for users to manually coordinate their changes</li>
-  <li>A “repo” is a directory tree that is under VCS control</li>
-  <li>Each repo records a history of what changed for each file during each commit</li>
-  <li>Recording a history means you can roll back to a previous commit, see who made which changes, or build a binary from a previous commit (not just the most recent)</li>
-  <li>When a user works on source code that is under DCVS control they start by copying a repo from a server to their laptop</li>
-  <li>After a user makes changes they “commit” their work and the changes are pushed from their laptop back to the server</li>
-  <li>Each time a user pushes their commits to the repo the server determines the different between the user’s changes and the latest version</li>
-  <li>Each repo has a main branch and that is called the head, trunk, master, or default branch.  Changes are merged into this branch.</li>
-  <li>In summary...</li>
-    <ul>
-      <li>Each user works on his or her own branch to make changes</li>
-      <li>The branch is pushed to the server </li>
-      <li>The code is reviewed</li>
-      <li>The code is merged into the head / trunk / default / master / main branch</li>
-    </ul>
-</ul>
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_fifteen_page_three.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_sixteen_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
 
 
-</div>
-</div>
-</div>
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -200,35 +239,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
-
-
-
-
-
-
-    </body>
 </html>

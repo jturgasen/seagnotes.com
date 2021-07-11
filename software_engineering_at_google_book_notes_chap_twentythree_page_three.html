@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #1 - What is Software Engineering? (3 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 23 continuous integration“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #23 - Continuous Integration (3 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentythree_page_three.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+</head>
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
-
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,166 +56,200 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #1 - What is Software Engineering? (3 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #1 - What is Software Engineering? (3 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #23 - Continuous Integration (3 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>As a release candidate is promoted through environments (dev, stage, prod) more and more tests
+                        are run at each step</li>
+                    <li>It's important to run tests against the release candidate (RC) because...</li>
+                    <ul>
+                        <li>Sanity check to make sure nothing strange happened when the code was cut and compiled into
+                            the RC</li>
+                        <li>So the engineer can easily audit the process and not dig into the (usually separate)
+                            continual build (CB) logs</li>
+                        <li>You can apply cherry pick fixes in the RC but this means it will be different from the CB
+                            and thus must be tested again</li>
+                        <li>Allows for emergency pushes that can bypass CB testing</li>
+                    </ul>
+                    <li>An organization can run some of the same pre-production tests against the production code after
+                        it has been deployed. Google calls these "probers"</li>
+                    <li>All of the testing and re-testing is essentially like the security idea of "defense in depth"
+                    </li>
+                    <li>Both continuous integration and production alerting share the same overall purpose and thus
+                        lessons from one can be applied to the other</li>
+                    <li>Only create actionable alerts, 100% uptime (in prod and in builds) is very expensive, and so on
+                    </li>
+                    <li>Additional challenges related to CI include...</li>
+                    <ul>
+                        <li>Presubmit optimizations that balance which tests to run at pre-submit and which run at
+                            post-submit</li>
+                        <li>Culprit finding. What caused the build to fail?</li>
+                        <li>Failure isolation in large systems</li>
+                        <li>Resource constraints because tests require resources to run</li>
+                    </ul>
+                    <li>It's hard to always have a green build for end-to-end tests because some components are out of
+                        your control</li>
+                    <li>When a build breaks consider if it's a release-blocking bug or a non-blocking bug</li>
+                    <li>To overcome test instability and flakeyness consider running the same test multiple times. If it
+                        repeats 5 times and 1 of those times fails then things are probably ok and just a bit flakey
+                    </li>
+                    <li>Hermetic tests are run against a self-contained environment and do not hit real production
+                        backends or interfaces</li>
+                    <li>Hermetic tests allow for greater confidence because if it fails multiple times you know it's a
+                        problem with the new code and not with a flakey backend</li>
+                    <li>Hermetic tests use fakes, mocks, and stubs to act as substitutes for real backends (see Chapter
+                        13)</li>
+                    <li>Google suggests starting with a fully hermetic setup</li>
+                    <li>Record / replay (see Chapter 14) is a powerful tool but one must balance between false positives
+                        and false negatives</li>
+                    <li>Most teams at Google use a combination of hermetic (simulated) and real live backends for their
+                        testing</li>
+                    <li>Google has "build cops" - people who's job it is to fix a broken build so that the other
+                        engineers are not blocked </li>
+                    <li>Some build processes can examine their log output and automatically submit bug reports</li>
+                    <li>CI is very cost effective. It may seem expensive but fixing bugs after they hit production is
+                        much more expensive.</li>
+
+                </ul>
+
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_one_page_two.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chapter_twentyfour.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<h2>What is Software Engineering? (3 of 3)</h2>
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<ul class="bullets_list">
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-  <li>As a release candidate is promoted through environments (dev, stage, prod) more and more tests are run at each step</li>
-  <li>It's important to run tests against the release candidate (RC) because...</li>
-   <ul>
-    <li>Sanity check to make sure nothing strange happened when the code was cut and compiled into the RC</li>
-    <li>So the engineer can easily audit the process and not dig into the (usually separate) continual build (CB) logs</li>
-    <li>You can apply cherry pick fixes in the RC but this means it will be different from the CB and thus must be tested again</li>
-    <li>Allows for emergency pushes that can bypass CB testing</li>
-   </ul>
-  <li>An organization can run some of the same pre-production tests against the production code after it has been deployed.  Google calls these "probers"</li>
-  <li>All of the testing and re-testing is essentially like the security idea of "defense in depth"</li>
-  <li>Both continuous integration and production alerting share the same overall purpose and thus lessons from one can be applied to the other</li>
-  <li>Only create actionable alerts, 100% uptime (in prod and in builds) is very expensive, and so on</li>
-  <li>Additional challenges related to CI include...</li>
-   <ul>
-    <li>Presubmit optimizations that balance which tests to run at pre-submit and which run at post-submit</li>
-    <li>Culprit finding.  What caused the build to fail?</li>
-    <li>Failure isolation in large systems</li>
-    <li>Resource constraints because tests require resources to run</li>
-   </ul>
-  <li>It's hard to always have a green build for end-to-end tests because some components are out of your control</li>
-  <li>When a build breaks consider if it's a release-blocking bug or a non-blocking bug</li>
-  <li>To overcome test instability and flakeyness consider running the same test multiple times.  If it repeats 5 times and 1 of those times fails then things are probably ok and just a bit flakey</li>
-  <li>Hermetic tests are run against a self-contained environment and do not hit real production backends or interfaces</li>
-  <li>Hermetic tests allow for greater confidence because if it fails multiple times you know it's a problem with the new code and not with a flakey backend</li>
-  <li>Hermetic tests use fakes, mocks, and stubs to act as substitutes for real backends (see Chapter 13)</li>
-  <li>Google suggests starting with a fully hermetic setup</li>
-  <li>Record / replay (see Chapter 14) is a powerful tool but one must balance between false positives and false negatives</li>
-  <li>Most teams at Google use a combination of hermetic (simulated) and real live backends for their testing</li>
-  <li>Google has "build cops" - people who's job it is to fix a broken build so that the other engineers are not blocked </li>
-  <li>Some build processes can examine their log output and automatically submit bug reports</li>
-  <li>CI is very cost effective.  It may seem expensive but fixing bugs after they hit production is much more expensive.</li>
 
-</ul>
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_one_page_two.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chapter_twentyfour.html" class="next_page_link" style="position: relative;left: 10px;">
-NEXT >
-</a>
 
-<!-- ******* -->
 
 
-</div>
-</div>
-</div>
 
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -212,38 +258,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
-
-
-
-
-
-
-    </body>
 </html>

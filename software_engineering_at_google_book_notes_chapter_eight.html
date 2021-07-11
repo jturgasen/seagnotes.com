@@ -1,88 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Executive SaaS Leadership DevOps Cloud Cybersecurity Software Development DevSecOps SRE IaC Python Kubernetes SEAG Notes" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #8 - Style Guides and Rules (1 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+    practices development best practices at google SWE chapter 8 style guides and rules“ />
+  <meta name="author" content="Josh Turgasen" />
+  <title>Software Engineering at Google Book Notes | Chapter #8 - Style Guides and Rules (1 of 3)</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS (includes Bootstrap)-->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- ******************** -->
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+  <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_eight.html” rel=”canonical” />
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'UA-55182074-2');
+  </script>
+  <!-- ************ -->
 
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
-
-
-
-
-
-
-
-
-
-
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
-                <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <!-- Google AdSense -->
+  <script data-ad-client="ca-pub-6903946585816068" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- ************** -->
 
 
 
+</head>
 
-
-
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #8 - Style Guides and Rules (1 of 3)</div>
-                <div class="col-md-12 line">
-                <span class="linee"></span>
-                </div>
-
-
-            </div>
-        </header>
-        <!-- ****************** -->
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -91,107 +53,156 @@
 
 
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
-
-<h2>Style Guides and Rules (1 of 3)</h2>
-
-<ul class="bullets_list">
-
-  <li>Style guides maintain the rules for governing codebases (much more than just “code style”)</li>
-  <li>Note that these are rules, not suggestions or recommendations - there is a difference</li>
-  <li>At Google there is a style guide for each programming language and each guide differs in length, scope, and content</li>
-  <li>Good and bad are subjective so what is good for one organization may not be good for another</li>
-  <li>By having rules in a style guide it points the engineer to what the organization values as “good”</li>
-  <li>Instead of asking which rules to create instead ask what your end goal is and create rules to get you there</li>
-  <li>Your codebase should aspire to be resilient to both time and scale</li>
-  <li>Rules should do 3 things:</li>
-    <ul>
-      <li>Pull their own weight</li>
-      <li>Each rule has a cost to be considered.</li>
-      <li>More rules make it challenging and expensive to both maintain and abide by the rule set</li>
-    </ul>
-  </li>
-  <li>Optimize for the reader, not the writer.</li>
-  <li>The code will be read many more times than it will be written to.</li>
-  <li>Leave direct evidence of the code’s intended behavior.</li>
-  <li>Create clear evidence of object ownership (example being C++ pointers)</li>
-  <li>Documentation comments describe intent or design while implementation comments are used to highlight or justify non-obvious choices that were made, point out important parts of the code, or explain tricky sections.</li>
-  <li>Be consistent</li>
-  <li>Style guides allow engineers to jump into new code quickly</li>
-  <li>Consistency allows your engineering organization to scale - both technical and human</li>
-  <li>Consisten code allows for expert “chunking” (viewing things as meaningful “chunks” vs individual pieces) for faster reading an analysis</li>
-</ul>
 
 
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <span class="">SEAG Notes</span></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+          </li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+          </li>
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_seven_page_three.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_eight_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
-
-
-</div>
-</div>
-</div>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
+  <!-- HEADER-->
+  <header class="header_chapters">
+    <div class="container banner_title_heading">
+      <div class="chapters_page_header">Software Engineering At Google</div>
+      <div class="chapters_number">Chapter #8 - Style Guides and Rules (1 of 3)</div>
+      <div class="col-md-12 line">
+        <span class="linee"></span>
+      </div>
 
-          <div class="row titles_row">
-          <div class="col-md-12">
+
+    </div>
+  </header>
+  <!-- ****************** -->
+
+
+
+
+
+
+
+
+  <div class="container list_chapter_pages">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1>Software Engineering at Google Chapter #8 - Style Guides and Rules (1 of 3)</h1>
+
+        <ul class="bullets_list">
+
+          <li>Style guides maintain the rules for governing codebases (much more than just “code style”)</li>
+          <li>Note that these are rules, not suggestions or recommendations - there is a difference</li>
+          <li>At Google there is a style guide for each programming language and each guide differs in length, scope,
+            and content</li>
+          <li>Good and bad are subjective so what is good for one organization may not be good for another</li>
+          <li>By having rules in a style guide it points the engineer to what the organization values as “good”</li>
+          <li>Instead of asking which rules to create instead ask what your end goal is and create rules to get you
+            there</li>
+          <li>Your codebase should aspire to be resilient to both time and scale</li>
+          <li>Rules should do 3 things:</li>
+          <ul>
+            <li>Pull their own weight</li>
+            <li>Each rule has a cost to be considered.</li>
+            <li>More rules make it challenging and expensive to both maintain and abide by the rule set</li>
+          </ul>
+          </li>
+          <li>Optimize for the reader, not the writer.</li>
+          <li>The code will be read many more times than it will be written to.</li>
+          <li>Leave direct evidence of the code’s intended behavior.</li>
+          <li>Create clear evidence of object ownership (example being C++ pointers)</li>
+          <li>Documentation comments describe intent or design while implementation comments are used to highlight or
+            justify non-obvious choices that were made, point out important parts of the code, or explain tricky
+            sections.</li>
+          <li>Be consistent</li>
+          <li>Style guides allow engineers to jump into new code quickly</li>
+          <li>Consistency allows your engineering organization to scale - both technical and human</li>
+          <li>Consisten code allows for expert “chunking” (viewing things as meaningful “chunks” vs individual pieces)
+            for faster reading an analysis</li>
+        </ul>
+
+
+
+        <!-- NEXT PREVIOUS -->
+        <a href="software_engineering_at_google_book_notes_chap_seven_page_three.html" class="next_page_link">
+          < BACK </a>
+            <a href="software_engineering_at_google_book_notes_chap_eight_page_two.html" class="next_page_link"
+              style="position: relative;left: 190px;">
+              NEXT >
+            </a>
+            <!-- ******* -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--  -->
+  <!-- BUTTONS  and ADSENSE START -->
+  <div class="container about_us_section" id="blog">
+
+    <div class="container about_us_section" style="margin-top: 140px;">
+
+      <!-- BUTTONS ROW -->
+
+      <div class="row titles_row">
+        <div class="col-md-12">
           <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
+        </div>
+      </div>
+      <!-- BUTTONS ROW COMPLETED -->
+
+    </div>
+    <!-- ************* -->
+    <!-- ************* -->
 
   </div>
-  <!-- ************* -->
-  <!-- ************* -->
+  <!-- ************ -->
+  <!-- ************ -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
+  <!-- FOOTER SECTION START -->
+  <div class="container-fluid footer_bg">
+    <div class="container">
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
-
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
-
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
+      <!-- COPYRIGHT ROW -->
+      <div class="row copyright_row">
+        <div class="col-md-12">
+          <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+          <span class="copyright_title">All product names, logos, and trademarks are property of their respective
+            owners</span>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
+    </div>
+  </div>
+  <!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -220,18 +231,19 @@ NEXT >
 
 
 
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
+  <!-- JS-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="js/jquery.easing.min.js"></script>
+  <!-- Required JS-->
+  <script src="js/scripts.js"></script>
 
 
 
 
 
 
-    </body>
+</body>
+
 </html>

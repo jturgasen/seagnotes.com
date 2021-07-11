@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #21 Dependency Management (1 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 21 dependency management“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #21 Dependency Management (1 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chapter_twentyone.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
+</head>
 
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,169 +57,200 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">Chapter #21 Dependency Management (1 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">Chapter #21 Dependency Management (1 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #21 - Dependency Management (1 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>Dependency management is the management of the networks of packages, dependencies, and libraries
+                        that we don't control</li>
+                    <li>For example, what happens if your build process pulls the necessary libraries from an external
+                        source and doesn't specify the library version?</li>
+                    <ul>
+                        <li>You will always pull the newest version</li>
+                        <li>The newest version may or may not work with your software</li>
+                        <li>Each time you build you may get a different version of the library thus your builds aren't
+                            consistent</li>
+                        <li>Will the newest version introduce security issues?</li>
+                    </ul>
+                    <li>If you have multiple teams working on multiple dependent repos within your organization then
+                        your teams will need to deal with dependency management in the form of "internal dependencies"
+                        because on team's changes to their repo can break dependent code in another repo</li>
+                    <li>Google minimizes the above dependency issues with their "monorepo" (single repo) pattern.
+                        Everyone is working off the same, single repo thus they do not need to consider how repo A
+                        depends on repo B; it's all in the same single source code tree</li>
+                    <li>"All else being equal, prefer source control problems over dependency management problems"</li>
+                    <li>Dependency management issues are much harder to detect, track, fix, and reason about than are
+                        source control problems</li>
+                    <li>Projects are no longer islands - dependency management applies to almost all software projects
+                        big and small, internal and external</li>
+                    <li>Due to the deepness of software stacks dependency management is one of the most important issues
+                        in software development today</li>
+                    <li>The issue of dependency management should be thought of in large terms: How do we manage a
+                        network of dependencies over time (vs how to get a single version of a single package so that
+                        our software will build)</li>
+                    <li>Over time all nodes in a dependency graph (or dependency network) will change and that is why we
+                        must think about and plan out dependency management</li>
+                    <li>The core problem in dependency management is the question: "What if two nodes in the dependency
+                        network have conflicting requirements but your organization depends on them both?"</li>
+                    <li>The <b>diamond dependency problem</b> is one where your software depends on library A and
+                        library B and both of those libraries depend on a third library (library C)</li>
+                    <ul>
+                        <li>What happens when the team that maintains library C makes a breaking change?</li>
+                        <li>How quickly will library A & B be updated to v2?</li>
+                        <li>What happens if library A depends on version 1 of library C but library B version 2 of
+                            library C?</li>
+                        <li>There are ways around this issue. For example you can embed both library A and library B
+                            into the binary. Some programming languages tolerate this (Java) some will not (C++)</li>
+                        <li>You can also use tricks like renaming functions, but there is no fix when incompatible data
+                            types are passed from one library to another</li>
+                    </ul>
+                    <li>The policy and technology of dependency management essentially boils down to the question: "How
+                        do we avoid conflicting requirements while still allowing change among non-coordinating
+                        (independent) groups?"</li>
+                    <li>Don't re-invent the wheel. If an external source can provide your dependency then use it (eg:
+                        JSON parser or regex parser)</li>
+                    <li>Consider the on-going maintenance costs of external dependencies. Platforms will change,
+                        security issues will be found, or a change in the dependency network will force an upgrade at
+                        some point in the future</li>
+                    <li>Dependency providers (the people and organizations who create and maintain packages that others
+                        depend on) should consider...</li>
+                    <ul>
+                        <li>How are breaking changes handled?</li>
+                        <li>How much change is assumed?</li>
+                        <li>How much evolution is assumed?</li>
+                        <li>How long are releases supported for?</li>
+                        <li>By answering these questions it helps the users determine if the dependency and it's ongoing
+                            maintenance costs are right for the project</li>
+                    </ul>
+                    <li>ABI compatibility is "application binary compatibility". This means a binary built with version
+                        2 will continue to run on version 3, version 4, and so on. Linux, Java, and C++ provide ABI
+                        compatibility.</li>
+                    <li>ABI compatibility is different from source compatibility. Source compatibility means one cannot
+                        build a library using version 1 and then link to that library with a version 2 binary. If the
+                        library is rebuilt (from the same source code) using version 2 then the version 2 binary can
+                        link to the new version 2 library.</li>
+                </ul>
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_twenty_page_three.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chap_twentyone_page_two.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
-
-
-
-
-
-
-
-
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
-
-<h2>Chapter #21 Dependency Management (1 of 3)</h2>
-
-<ul class="bullets_list">
-
-  <li>Dependency management is the management of the networks of packages, dependencies, and libraries that we don't control</li>
-  <li>For example, what happens if your build process pulls the necessary libraries from an external source and doesn't specify the library version?</li>
-   <ul>
-    <li>You will always pull the newest version</li>
-    <li>The newest version may or may not work with your software</li>
-    <li>Each time you build you may get a different version of the library thus your builds aren't consistent</li>
-    <li>Will the newest version introduce security issues?</li>
-   </ul>
-  <li>If you have multiple teams working on multiple dependent repos within your organization then your teams will need to deal with dependency management in the form of "internal dependencies" because on team's changes to their repo can break dependent code in another repo</li>
-  <li>Google minimizes the above dependency issues with their "monorepo" (single repo) pattern.  Everyone is working off the same, single repo thus they do not need to consider how repo A depends on repo B; it's all in the same single source code tree</li>
-  <li>"All else being equal, prefer source control problems over dependency management problems"</li>
-  <li>Dependency management issues are much harder to detect, track, fix, and reason about than are source control problems</li>
-  <li>Projects are no longer islands - dependency management applies to almost all software projects big and small, internal and external</li>
-  <li>Due to the deepness of software stacks dependency management is one of the most important issues in software development today</li>
-  <li>The issue of dependency management should be thought of in large terms: How do we manage a network of dependencies over time (vs how to get a single version of a single package so that our software will build)</li>
-  <li>Over time all nodes in a dependency graph (or dependency network) will change and that is why we must think about and plan out dependency management</li>
-  <li>The core problem in dependency management is the question: "What if two nodes in the dependency network have conflicting requirements but your organization depends on them both?"</li>
-  <li>The <b>diamond dependency problem</b> is one where your software depends on library A and library B and both of those libraries depend on a third library (library C)</li>
-   <ul>
-    <li>What happens when the team that maintains library C makes a breaking change?</li>
-    <li>How quickly will library A & B be updated to v2?</li>
-    <li>What happens if library A depends on version 1 of library C but library B version 2 of library C?</li>
-    <li>There are ways around this issue.  For example you can embed both library A and library B into the binary.  Some programming languages tolerate this (Java) some will not (C++)</li>
-    <li>You can also use tricks like renaming functions, but there is no fix when incompatible data types are passed from one library to another</li>
-   </ul>
-  <li>The policy and technology of dependency management essentially boils down to the question: "How do we avoid conflicting requirements while still allowing change among non-coordinating (independent) groups?"</li>
-  <li>Don't re-invent the wheel.  If an external source can provide your dependency then use it (eg: JSON parser or regex parser)</li>
-  <li>Consider the on-going maintenance costs of external dependencies.  Platforms will change, security issues will be found, or a change in the dependency network will force an upgrade at some point in the future</li>
-  <li>Dependency providers (the people and organizations who create and maintain packages that others depend on) should consider...</li>
-   <ul>
-    <li>How are breaking changes handled?</li>
-    <li>How much change is assumed?</li>
-    <li>How much evolution is assumed?</li>
-    <li>How long are releases supported for?</li>
-    <li>By answering these questions it helps the users determine if the dependency and it's ongoing maintenance costs are right for the project</li>
-   </ul>
-  <li>ABI compatibility is "application binary compatibility".  This means a binary built with version 2 will continue to run on version 3, version 4, and so on.  Linux, Java, and C++ provide ABI compatibility.</li>
-  <li>ABI compatibility is different from source compatibility.  Source compatibility means one cannot build a library using version 1 and then link to that library with a version 2 binary.  If the library is rebuilt (from the same source code) using version 2 then the version 2 binary can link to the new version 2 library.</li>
-</ul>
+        </div>
+    </div>
 
 
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_twenty_page_three.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chap_twentyone_page_two.html" class="next_page_link" style="position: relative;left: 120px;">
-NEXT >
-</a>
-<!-- ******* -->
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
-</div>
-</div>
-</div>
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<div class="container about_us_section" style="margin-top: 140px;">
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -229,24 +273,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
+</body>
 
-
-
-
-
-
-    </body>
 </html>

@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Software Engineering at Google Notes Software Engineering at Google Book Notes SEAG Notes seagnotes.com" />
-        <meta name="author" content="Josh Turgasen" />
-        <h1><title>Software Engineering at Google Notes | Chapter #21 Dependency Management (3 of 3)</title></h1>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-        <!-- CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- ******************** -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content=”Software Engineering at Google Book Notes software engineering software best
+        practices development best practices at google SWE chapter 21 dependency management“ />
+    <meta name="author" content="Josh Turgasen" />
+    <title>Software Engineering at Google Book Notes | Chapter #21 Dependency Management (3 of 3)</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS (includes Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- ******************** -->
+
+    <link href=”https://www.seagnotes.com/software_engineering_at_google_book_notes_chap_twentyone_page_three.html”
+        rel=”canonical” />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-55182074-2');
+    </script>
+    <!-- ************ -->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6903946585816068" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ************** -->
 
 
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55182074-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+</head>
 
-          gtag('config', 'UA-55182074-2');
-        </script>
-        <!-- ************ -->
-
-
-    </head>
-    <body id="page-top" style="font-family: 'Poppins', sans-serif;">
+<body id="page-top" style="font-family: 'Poppins', sans-serif;">
 
 
 
@@ -44,171 +56,212 @@
 
 
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
                 <span class="">SEAG Notes</span></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                        </li>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#chapters">Chapters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.html">About</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
 
 
-        <!-- HEADER-->
-        <header class="header_chapters">
-            <div class="container banner_title_heading">
-                <div class="chapters_page_header">Software Engineering At Google</div>
-                <div class="chapters_number">CChapter #21 Dependency Management (3 of 3)</div>
-                <div class="col-md-12 line">
+    <!-- HEADER-->
+    <header class="header_chapters">
+        <div class="container banner_title_heading">
+            <div class="chapters_page_header">Software Engineering At Google</div>
+            <div class="chapters_number">CChapter #21 Dependency Management (3 of 3)</div>
+            <div class="col-md-12 line">
                 <span class="linee"></span>
-                </div>
+            </div>
+
+
+        </div>
+    </header>
+    <!-- ****************** -->
+
+
+
+
+
+
+
+
+    <div class="container list_chapter_pages">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Software Engineering at Google Chapter #21 - Dependency Management (3 of 3)</h1>
+
+                <ul class="bullets_list">
+
+                    <li>The <b>bundle everything</b> model...</li>
+                    <ul>
+                        <li>Uses "distributions" (think Ubuntu or RedHat Linux)</li>
+                        <li>In essence the distribution's maintainer gathers up all necessary software, draws a box
+                            around it, then releases as a single package or distribution</li>
+                        <li>Another example of this model is selling source code and including it's dependencies in the
+                            distribution (vs the customer pulling down dependencies from external sources)</li>
+                        <li>It's up to the distributor to bundle, test, and integrate all components of each
+                            distribution's release</li>
+                        <li>Version selection is handled by the distributor</li>
+                    </ul>
+                    <li>The <b>live at head</b> model...</li>
+                    <ul>
+                        <li>Used by Google and is "costly but effective" for a single organization (vs Ubuntu Linux who
+                            is a single <i>distributor</i> but is a collection of packages from other
+                            <i>organizations</i>
+                        </li>
+                        <li>This method can be viewed as the dependency management extension of the trunk-based
+                            development model</li>
+                        <li>The method attempts to remove time and choice from the equation. It does not let developers
+                            choose a version (a'la SemVer)</li>
+                        <li>Many assumptions are made in this model</li>
+                        <li>This model requires strong CI and extensive testing</li>
+                    </ul>
+                    <li>One downside to SemVer is that version changes are a guess. There is not 100% assurance that
+                        going from 2.14.5 to 2.16.1 will still work correctly. It <i>should</i> but there's no way to
+                        guarantee it</li>
+                    <li>When the SemVer solvers attempt to do their magic they fail by both overconstraining and
+                        under-protecting us</li>
+                    <li>Consider a scenario where a library changes one of its two interfaces and thus the major version
+                        is incremented. If you are building software that only uses the unchanged interface the solver
+                        will fail due to the major version bump</li>
+                    <li>Another issue with SemVer is one where things change but yet there is no major version bump.
+                        Think of things like data types, logging output, or delay (increased by 10ms). These changes
+                        will clearly break some things yet it "doesn't count" as a major version change</li>
+                    <li>SemVer also has human issues. What if a project does a major version bump every 6 months
+                        regardless of changes?</li>
+                    <li>Consider that when software says it requires a library of >= version 2.14 it was probably built
+                        by the developer with version 2.14 and it assumes future versions are compatible</li>
+                    <li>In the above scenario one should consider trying 2.14 first even if 2.15 is available. You
+                        <i>can</i> use a newer version but first try the "known good" version in case a newer version
+                        introduces unforeseen bugs
+                    </li>
+                    <li>Scale is what shows the weakness of SemVer</li>
+                    <li>The intent of SemVer is to say "In my estimation this change will be easy (or not) to adopt"
+                    </li>
+                    <li>Given time, all forks become expensive</li>
+                    <li>When creating a dependency (such as open sourcing a library that your company developed)
+                        consider the following...</li>
+                    <ul>
+                        <li>Portability concerns (in-house toolchains to build it, in-house flags within the code, etc)
+                        </li>
+                        <li>Can user contributions to the open source version be re-integrated into the in-house
+                            version?</li>
+                        <li>How will the in-house version keep in sync with the open source version and how much
+                            engineering effort will that cost?</li>
+                        <li>Create a long-term plan before releasing it</li>
+                        <li>If done incorrectly your organization's reputation will suffer</li>
+                    </ul>
+                    <li>When imposing a dependency on your organization carefully consider the ongoing costs</li>
+                    <li>SemVer should be viewed as a lossy estimate of compatibility. CI and testing provides a more
+                        accurate representation of compatibility (theory vs practice)</li>
+
+                </ul>
+
+
+
+
+                <!-- NEXT PREVIOUS -->
+                <a href="software_engineering_at_google_book_notes_chap_twentyone_page_two.html" class="next_page_link">
+                    < BACK </a>
+                        <a href="software_engineering_at_google_book_notes_chapter_twentytwo.html"
+                            class="next_page_link" style="position: relative;left: 190px;">
+                            NEXT >
+                        </a>
+
+                        <!-- ******* -->
 
 
             </div>
-        </header>
-        <!-- ****************** -->
+        </div>
+    </div>
 
 
 
 
+    <!--  -->
+    <!-- BUTTONS  and ADSENSE START -->
+    <div class="container about_us_section" id="blog">
 
+        <div class="container about_us_section" style="margin-top: 140px;">
 
+            <!-- BUTTONS ROW -->
 
+            <div class="row titles_row">
+                <div class="col-md-12">
+                    <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
+                </div>
+            </div>
+            <!-- BUTTONS ROW COMPLETED -->
 
-<div class="container list_chapter_pages">
-<div class="row">
-<div class="col-md-12">
+        </div>
+        <!-- ************* -->
+        <!-- ************* -->
 
-<h2>Chapter #21 Dependency Management (3 of 3)</h2>
+    </div>
+    <!-- ************ -->
+    <!-- ************ -->
 
-<ul class="bullets_list">
+    <!-- FOOTER SECTION START -->
+    <div class="container-fluid footer_bg">
+        <div class="container">
 
-  <li>The <b>bundle everything</b> model...</li>
-   <ul>
-    <li>Uses "distributions" (think Ubuntu or RedHat Linux)</li>
-    <li>In essence the distribution's maintainer gathers up all necessary software, draws a box around it, then releases as a single package or distribution</li>
-    <li>Another example of this model is selling source code and including it's dependencies in the distribution (vs the customer pulling down dependencies from external sources)</li>
-    <li>It's up to the distributor to bundle, test, and integrate all components of each distribution's release</li>
-    <li>Version selection is handled by the distributor</li>
-   </ul>
-  <li>The <b>live at head</b> model...</li>
-   <ul>
-    <li>Used by Google and is "costly but effective" for a single organization (vs Ubuntu Linux who is a single <i>distributor</i> but is a collection of packages from other <i>organizations</i></li>
-    <li>This method can be viewed as the dependency management extension of the trunk-based development model</li>
-    <li>The method attempts to remove time and choice from the equation.  It does not let developers choose a version (a'la SemVer)</li>
-    <li>Many assumptions are made in this model</li>
-    <li>This model requires strong CI and extensive testing</li>
-   </ul>
-  <li>One downside to SemVer is that version changes are a guess.  There is not 100% assurance that going from 2.14.5 to 2.16.1 will still work correctly.  It <i>should</i> but there's no way to guarantee it</li>
-  <li>When the SemVer solvers attempt to do their magic they fail by both overconstraining and under-protecting us</li>
-  <li>Consider a scenario where a library changes one of its two interfaces and thus the major version is incremented.  If you are building software that only uses the unchanged interface the solver will fail due to the major version bump</li>
-  <li>Another issue with SemVer is one where things change but yet there is no major version bump.  Think of things like data types, logging output, or delay (increased by 10ms).  These changes will clearly break some things yet it "doesn't count" as a major version change</li>
-  <li>SemVer also has human issues.  What if a project does a major version bump every 6 months regardless of changes?</li>
-  <li>Consider that when software says it requires a library of >= version 2.14 it was probably built by the developer with version 2.14 and it assumes future versions are compatible</li>
-  <li>In the above scenario one should consider trying 2.14 first even if 2.15 is available.  You <i>can</i> use a newer version but first try the "known good" version in case a newer version introduces unforeseen bugs</li>
-  <li>Scale is what shows the weakness of SemVer</li>
-  <li>The intent of SemVer is to say "In my estimation this change will be easy (or not) to adopt"</li>
-  <li>Given time, all forks become expensive</li>
-  <li>When creating a dependency (such as open sourcing a library that your company developed) consider the following...</li>
-   <ul>
-    <li>Portability concerns (in-house toolchains to build it, in-house flags within the code, etc)</li>
-    <li>Can user contributions to the open source version be re-integrated into the in-house version?</li>
-    <li>How will the in-house version keep in sync with the open source version and how much engineering effort will that cost?</li>
-    <li>Create a long-term plan before releasing it</li>
-    <li>If done incorrectly your organization's reputation will suffer</li>
-   </ul>
-  <li>When imposing a dependency on your organization carefully consider the ongoing costs</li>
-  <li>SemVer should be viewed as a lossy estimate of compatibility.  CI and testing provides a more accurate representation of compatibility (theory vs practice)</li>
 
-</ul>
+            <!-- COPYRIGHT ROW -->
+            <div class="row copyright_row">
+                <div class="col-md-12">
+                    <span class="copyright_title">© 2021 Josh Turgasen</span><br>
+                    <span class="copyright_title">All product names, logos, and trademarks are property of their
+                        respective owners</span>
+                </div>
+            </div>
+            <!--  -->
+            <!--  -->
 
 
+        </div>
+    </div>
+    <!-- FOOTER SECTION COMPLETED -->
 
 
-<!-- NEXT PREVIOUS -->
-<a href="software_engineering_at_google_book_notes_chap_twentyone_page_two.html" class="next_page_link">
-< BACK
-</a>
-<a href="software_engineering_at_google_book_notes_chapter_twentytwo.html" class="next_page_link" style="position: relative;left: 10px;">
-NEXT >
-</a>
 
-<!-- ******* -->
 
 
-</div>
-</div>
-</div>
 
 
 
 
-<!--  -->
-<!-- BUTTONS  and ADSENSE START -->
-<div class="container about_us_section" id="blog">
 
-<div class="container about_us_section" style="margin-top: 140px;">
 
-          <!-- BUTTONS ROW -->
 
-          <div class="row titles_row">
-          <div class="col-md-12">
-          <p>Thank you for your time and attention. <br>Apply what you've learned here. <br>Enjoy it all.</p>
-          </div>
-          </div>
-          <!-- BUTTONS ROW COMPLETED -->
 
-  </div>
-  <!-- ************* -->
-  <!-- ************* -->
 
-<!-- GOOGLE ADSENSE -->
-<div class="row" style="text-align:center;">
-<div class="col-md-12">
-    <script data-ad-client="ca-pub-6903946585816068" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
-</div>
-<!-- ********* -->
 
-</div>
-<!-- ************ -->
-<!-- ************ -->
 
-<!-- FOOTER SECTION START -->
-<div class="container-fluid footer_bg">
-<div class="container">
 
 
-<!-- COPYRIGHT ROW -->
-<div class="row copyright_row">
-<div class="col-md-12">
-  <span class="copyright_title">© 2021 Josh Turgasen</span><br>
-  <span class="copyright_title">All product names, logos, and trademarks are property of their respective owners</span>
-</div>
-</div>
-<!--  -->
-<!--  -->
 
 
-</div>
-</div>
-<!-- FOOTER SECTION COMPLETED -->
 
 
 
@@ -217,38 +270,19 @@ NEXT >
 
 
 
+    <!-- JS-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Required JS-->
+    <script src="js/scripts.js"></script>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="js/jquery.easing.min.js"></script>
-        <!-- Required JS-->
-        <script src="js/scripts.js"></script>
-
-
-
-
-
-
-    </body>
 </html>
